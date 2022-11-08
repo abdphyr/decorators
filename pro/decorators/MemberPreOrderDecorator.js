@@ -1,0 +1,11 @@
+function MemberPreOrderDecorator() {
+  return (target) => {
+    target.prototype.calculateTotalPrice = function () {
+      return this.products
+      .reduce((acc, item) =>
+      acc + item.price, 0) * 0.9 * 0.95
+    }
+  };
+}
+
+module.exports.MemberPreOrderDecorator = MemberPreOrderDecorator
